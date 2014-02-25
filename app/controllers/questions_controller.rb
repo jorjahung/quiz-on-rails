@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   	 question = Question.find(params[:id])
 
   	if question.answer == to_bool(params[:answer])
-  		flash[:notice] = "Correct!!"
+  		flash[:notice] = "Correct!!!!!"
   	else
   		flash[:notice] = "WRONG! :("
   	end
