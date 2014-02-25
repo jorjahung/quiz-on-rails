@@ -8,5 +8,6 @@ Feature: Questions
 	Scenario: Showing Answer
 		Given there is a question
 		When I visit the homepage
-		Then I should see an answer
+		When I click correct answer
+		Then I should see 'correct'
 
