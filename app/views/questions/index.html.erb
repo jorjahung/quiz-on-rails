@@ -1,9 +1,13 @@
-<ul>
 <% @questions.each do |question| %>
-	<li><%= question.body %> - <%= question.answer %></li>
+	<h1><%= question.body %></h1>
 <% end %>
-</ul>
 
-<%= form_tag(questions_path, method: 'post') do %>
-<% end %>	
-# TODO: finish true false button !!! 
+	<%= form_tag(:action => "check") do %>
+	<!-- , :id => question.id -->
+		<%= button_tag("True", name: "answer", value: "true") %>
+		<%= button_tag("False", name: "answer", value: "false") %>
+	<% end %>	
+
+*************** <%= @answer %> ****************
+
+

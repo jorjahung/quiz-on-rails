@@ -1,6 +1,7 @@
 QuizOnRails::Application.routes.draw do
 
   get "questions/index"
+  post "questions/check" => 'questions#check'
   resources :questions
 
   root 'questions#index'
