@@ -1,13 +1,13 @@
 <% @questions.each do |question| %>
 	<h1><%= question.body %></h1>
-<% end %>
-
-	<%= form_tag(:action => "check") do %>
-	<!-- , :id => question.id -->
+	<%= form_tag(check_question_path(question)) do %>
 		<%= button_tag("True", name: "answer", value: "true") %>
 		<%= button_tag("False", name: "answer", value: "false") %>
 	<% end %>	
+<% end %>
 
-*************** <%= @answer %> ****************
+
+
+<%= flash[:notice] %>
 
 
