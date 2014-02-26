@@ -22,8 +22,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      flash[:notice] = "Question saved!"
-      redirect_to questions_path
+      redirect_to questions_path, notice: "Question saved!"
     else
       @question.errors[:body].each do |error|
         flash[:error] = "Body " + error

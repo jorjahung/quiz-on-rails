@@ -1,3 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessor :username, :password, :password_confirmation
+  validates :username,
+            presence: true,
+            uniqueness: true,
+            length: { minimum: 3}
+  # attr_accessible :username, :password, :password_confirmation
 end
