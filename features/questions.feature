@@ -1,12 +1,13 @@
 Feature: Questions
 
-  Scenario: Listing Questions
+	Background:
 		Given there is a question
+
+    Scenario: Listing Questions
 		When I visit the homepage
 		Then I should see a question
 
 	Scenario: Showing Answer
-		Given there is a question
 		When I visit the homepage
 		And I click correct answer
 		Then I should see 'correct'

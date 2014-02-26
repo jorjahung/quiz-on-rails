@@ -43,5 +43,5 @@ Then(/^I can see it in the homepage$/) do
 end
 
 Then(/^I see a notice that it has been saved$/) do
-  expect(page).to have_content("Question saved!")
+  expect(page).to have_content('Question saved!')
 end

@@ -1,8 +1,9 @@
 QuizOnRails::Application.routes.draw do
 
 
+  get "sessions/new"
   post "questions/:id/check" => 'questions#check', as: :check_question
-  resources :questions
+  resources :questions, :users
 
   root 'questions#index'
 
