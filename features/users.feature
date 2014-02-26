@@ -14,3 +14,5 @@ Feature: Users
 	Scenario: Has a password
 		When I signup without a password
 		Then I get 'Password can't be blank'
+
+	

@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
             presence: true,
             uniqueness: true,
             length: { minimum: 3}
+
+
 end
