@@ -3,5 +3,7 @@ class User < ActiveRecord::Base
             presence: true,
             uniqueness: true,
             length: { minimum: 3}
-  # attr_accessible :username, :password, :password_confirmation
+  has_secure_password 
+  validates :password, presence: true, length:{minimum: 5}
+
 end

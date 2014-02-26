@@ -9,4 +9,8 @@ Feature: Users
 
 	Scenario: Unique username
 		When I signup with a non unique username
-		Then I get an error
+		Then I get 'Username has already been taken'
+
+	Scenario: Has a password
+		When I signup without a password
+		Then I get 'no password'
