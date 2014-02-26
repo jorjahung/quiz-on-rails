@@ -10,15 +10,13 @@ class UsersController < ApplicationController
        redirect_to '/', notice: "Hello #{@user.username}! You have signed up!"
     else 
       @user.errors.each do |error|
-        @user.errors[error].flatten.each {|notice| flash[:notice] = error.to_s.capitalize+" "+ notice }
+        flash[:notice] = error.to_s.capitalize+" "+@user.errors[error][0]
       end
       redirect_to '/users/new'
     end
   end
 
   def user_params
-    puts "Params&&&&&&&&&&&&&"
-    puts params
     params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
