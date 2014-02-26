@@ -25,7 +25,10 @@ class QuestionsController < ApplicationController
       flash[:notice] = "Question saved!"
       redirect_to questions_path
     else
-      flash[:notice] = "ERROR!"
+      @question.errors[:body].each do |error|
+        flash[:error] = "Body " + error
+      end
+      redirect_to new_question_path
     end
   end
 
