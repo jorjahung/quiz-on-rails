@@ -7,9 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= flash[:error] %>
-<%= flash[:notice] %>
 
+<%= render 'layouts/flash' unless flash.nil?%>
 <%= yield %>
 
 </body>

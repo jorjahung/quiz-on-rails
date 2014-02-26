@@ -9,9 +9,7 @@ class UsersController < ApplicationController
     if @user.save
        redirect_to '/', notice: "Hello #{@user.username}! You have signed up!"
     else 
-      @user.errors.each do |error|
-        flash[:notice] = error.to_s.capitalize+" "+@user.errors[error][0]
-      end
+      flash[:errors] = @user.errors.full_messages
       redirect_to '/users/new'
     end
   end

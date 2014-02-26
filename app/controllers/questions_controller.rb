@@ -24,9 +24,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to questions_path, notice: "Question saved!"
     else
-      @question.errors[:body].each do |error|
-        flash[:error] = "Body " + error
-      end
+      flash[:errors] = @question.error.full_messages
       redirect_to new_question_path
     end
   end
