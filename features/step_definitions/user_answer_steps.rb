@@ -13,3 +13,12 @@ end
 Then(/^I should see my answer recorded$/) do
   expect(page).to have_content('You answered true')
 end
+
+When(/^I click on the correct answer$/) do
+  click_button 'True'
+end
+
+Then(/^I should see my score$/) do
+  expect(page).to have_content('score: 1')
+end
+

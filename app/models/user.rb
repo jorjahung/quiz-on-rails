@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :user_answers
 
+  def self.score
+    1
+  end
+
 end
