@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
 						allow_blank: true
   
   has_many :questions
-
+  has_many :user_answers
 
 end

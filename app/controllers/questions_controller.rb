@@ -6,11 +6,14 @@ class QuestionsController < ApplicationController
 
   def check
   	 question = Question.find(params[:id])
+     user_answer = to_bool(params[:answer])
 
-  	if question.answer == to_bool(params[:answer])
-  		flash[:notice] = "Correct!!!!!"
+     @stored_answer = UserAnswer.create(question: question, user: current_user, recorded_answer: user_answer)
+  	 
+    if question.answer == @stored_answer.recorded_answer
+  		flash[:notice] = "You answered #{@stored_answer.recorded_answer}. This is: Correct!!!!!"
   	else
-  		flash[:notice] = "WRONG! :("
+  		flash[:notice] = "You answered #{@stored_answer.recorded_answer}. This is: WRONG! :("
   	end
   	redirect_to questions_path
   end
@@ -35,6 +38,7 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:body, :answer, :user)
   end
+
 
   def to_bool(answer)
     return true   if answer == "true"   
