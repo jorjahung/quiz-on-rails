@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
 						presence: { on: :create }, 
 						length: { minimum: 5, allow_blank: true },
 						allow_blank: true
-
+  
+  has_many :questions
 
 
 end

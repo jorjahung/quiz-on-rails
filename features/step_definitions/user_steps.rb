@@ -29,3 +29,17 @@ When(/^I signup without a password$/) do
   fill_in("user[username]", :with => "Bob")
   click_button 'Sign up'  
 end
+
+
+Given(/^I am signed in$/) do
+  @user = User.create(username: 'Elvis', password: 's3cr3t', password_confirmation: 's3cr3t')
+  visit signin_path
+  fill_in('username', :with => @user.username)
+  fill_in('password', :with => @user.password)
+  click_button 'Sign in'
+  Question.create(body: "Did Elvis sing Jailhouse rock?", answer: true)
+end
+
+Then(/^I should not see my questions$/) do
+  expect(page).not_to have_content("Did Elvis sing Jailhouse rock?")
+end

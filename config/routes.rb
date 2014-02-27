@@ -1,7 +1,7 @@
 QuizOnRails::Application.routes.draw do
 
-
-
+  get "sessions/new" => 'sessions#new', as: :signin
+  get "sessions/destroy" => 'sessions#destroy', as: :signout
   post "questions/:id/check" => 'questions#check', as: :check_question
   resources :questions, :users, :sessions
 

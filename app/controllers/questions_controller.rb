@@ -21,6 +21,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    @question.user = current_user
     if @question.save
       redirect_to questions_path, notice: "Question saved!"
     else
@@ -32,7 +33,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, :answer)
+    params.require(:question).permit(:body, :answer, :user)
   end
 
   def to_bool(answer)

@@ -3,7 +3,7 @@ Given(/^username and password$/) do
 end
 
 Given(/^I am in the signin page$/) do
-  visit '/sessions/new'
+  visit signin_path
 end
 
 When(/^I input the correct username and password$/) do

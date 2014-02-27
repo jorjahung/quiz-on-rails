@@ -15,4 +15,9 @@ Feature: Users
 		When I signup without a password
 		Then I get 'Password can't be blank'
 
+	Scenario: User can't see own question
+		Given I am signed in
+		When I visit the homepage
+		Then I should not see my questions
+
 	
