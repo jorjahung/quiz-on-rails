@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :user_answers
 
-  def self.score
-    1
+  def score
+    user_answers.select {|useranswer| useranswer.correct? }.count
   end
 
 end

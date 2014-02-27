@@ -9,7 +9,7 @@
 <body>
 <header> 
 <% if current_user %>
-Logged is as: <%= current_user.username %>
+Logged is as: <%= current_user.username %>. Score: <%=  current_user.score %>.
 <%= link_to "Create new question", new_question_path %>
 <%= link_to "Sign Out", signout_path %>
 <% else %>
