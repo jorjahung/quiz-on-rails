@@ -1,4 +1,4 @@
-Given(/^username and password$/) do
+Given(/^I have a username and password$/) do
   @user = User.create(username: 'Bob', password: 's3cr3t', password_confirmation: 's3cr3t')
 end
 

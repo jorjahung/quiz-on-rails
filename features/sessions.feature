@@ -1,7 +1,7 @@
 Feature: session
 
 	Background:
-		Given username and password
+		Given I have a username and password
 
 	Scenario: Signing in
 		Given I am in the signin page
