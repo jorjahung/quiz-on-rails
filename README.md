@@ -25,6 +25,6 @@ Week 8 - Quiz Site
 * Capybara
 
 ###Team
-* @ColinFrankish
-* @nabin369
-* @ayaz020
+* [@ColinFrankish](http://github.com/ColinFrankish)
+* [@nabin369](http://github.com/nabin369)
+* [@ayaz0206](http://github.com/ayaz0206)
